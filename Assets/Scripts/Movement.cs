@@ -5,6 +5,7 @@ public class Movement : MonoBehaviour
     [SerializeField] InputAction boost;
     [SerializeField] InputAction rotation;
     [SerializeField] AudioClip boostSound;
+    [SerializeField] ParticleSystem boosterParticle;
 
     [SerializeField] float boostStrenght = 5f;
     [SerializeField] float rotationStrenght = 5f;
@@ -28,6 +29,7 @@ public class Movement : MonoBehaviour
         if (boost.IsPressed())
         {
             rb.AddRelativeForce(Vector3.forward * boostStrenght * Time.fixedDeltaTime);
+            boosterParticle.Play();
             if (!audioSource.isPlaying)
             {
                 audioSource.PlayOneShot(boostSound);
@@ -35,6 +37,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
+            boosterParticle.Stop();
             audioSource.Stop();
         }
 
