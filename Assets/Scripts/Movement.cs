@@ -46,11 +46,17 @@ public class Movement : MonoBehaviour
             float rotationValue = rotation.ReadValue<float>();
         if (rotationValue < 0)
         {
+            rb.freezeRotation = true;
             rb.transform.Rotate(Vector3.left * rotationStrenght);
         }
         else if (rotationValue > 0)
         {
+            rb.freezeRotation = true;
             rb.transform.Rotate(Vector3.right * rotationStrenght);
+        }
+        else
+        {
+            rb.freezeRotation = false;
         }
     }
 
