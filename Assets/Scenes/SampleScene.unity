@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Finish Pad
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eb8fb950cbf9bb14087e45d22acc5893, type: 3}
+      propertyPath: m_TagString
+      value: Finish
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -283,8 +287,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0000000018620406, y: -2.2866751e-26, z: 4.257882e-35, w: 1}
-  m_LocalPosition: {x: -3.7, y: 3.737, z: -7.0699997}
+  m_LocalRotation: {x: 0.041344427, y: 0.000000003504026, z: -1.4499592e-10, w: 0.999145}
+  m_LocalPosition: {x: -3.7, y: 1.03, z: -4.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -557,8 +561,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411552431}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0000000018620406, y: -2.2866751e-26, z: 5.4021805e-28, w: 1}
-  m_LocalPosition: {x: -3.7, y: 3.737, z: -7.0699997}
+  m_LocalRotation: {x: 0.04134442, y: 0.0000000035040257, z: -1.4499588e-10, w: 0.999145}
+  m_LocalPosition: {x: -3.7, y: 1.03, z: -4.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -582,7 +586,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 0, z: -6.85}
+  FollowOffset: {x: 0, y: 0.32, z: -3.86}
 --- !u!114 &411552437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,6 +705,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b44f2390ef5ac8b4f834702ac948e498, type: 3}
       propertyPath: m_Name
       value: Starting Pad
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b44f2390ef5ac8b4f834702ac948e498, type: 3}
+      propertyPath: m_TagString
+      value: Start
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -876,7 +884,7 @@ MonoBehaviour:
     m_Flags: 0
   boostSound: {fileID: 8300000, guid: d231fbc09ac1dd0488ccc4fb38a4c99e, type: 3}
   boosterParticle: {fileID: 2012740044}
-  boostStrenght: 300
+  boostStrenght: 264.9
   rotationStrenght: 2
 --- !u!82 &840497950
 AudioSource:
@@ -975,6 +983,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &840497953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254012017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56729ca2f985d24aba740425940e1d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crashSound: {fileID: 0}
 --- !u!1 &1003048258 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eb8fb950cbf9bb14087e45d22acc5893, type: 3}
@@ -1143,7 +1164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4298688433668793254, guid: 37bd9d888adfafc4caaebf78d021a71f, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 2.98
+      value: 3.03
       objectReference: {fileID: 0}
     - target: {fileID: 6014270415920203189, guid: 37bd9d888adfafc4caaebf78d021a71f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1216,7 +1237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06ef11b7ce383e6489240d653becde1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.737
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06ef11b7ce383e6489240d653becde1b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1254,6 +1275,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06ef11b7ce383e6489240d653becde1b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1273,6 +1298,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 06ef11b7ce383e6489240d653becde1b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 840497950}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 06ef11b7ce383e6489240d653becde1b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 840497953}
   m_SourcePrefab: {fileID: 100100000, guid: 06ef11b7ce383e6489240d653becde1b, type: 3}
 --- !u!4 &2012740042 stripped
 Transform:
