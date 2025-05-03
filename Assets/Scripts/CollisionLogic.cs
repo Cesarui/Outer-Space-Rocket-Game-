@@ -1,11 +1,11 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CollisionLogic : MonoBehaviour
 {
-    AudioSource audioSource;
-
     [SerializeField] AudioClip crashSound;
 
+    AudioSource audioSource;
     Movement movement;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,25 +20,19 @@ public class CollisionLogic : MonoBehaviour
         {
             case "Finish":
                 Debug.Log("You reached the end!!");
-                movement.enabled = false;
-                movement.GetComponent<AudioSource>().Stop();
+                GetComponent<Movement>().enabled = false;
+                audioSource.enabled = false;
                 movement.GetComponentInChildren<ParticleSystem>().Stop();
                 break;
             case "Start":
-                movement.enabled = true;
-                
+
                 break;
             default:
-                movement.enabled = false;
-                movement.GetComponent<AudioSource>().Stop();
+                GetComponent<Movement>().enabled = false;
+                audioSource.enabled = false;
                 movement.GetComponentInChildren<ParticleSystem>().Stop();
                 break;
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

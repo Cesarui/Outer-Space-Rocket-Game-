@@ -287,8 +287,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.041344427, y: 0.000000003504026, z: -1.4499592e-10, w: 0.999145}
-  m_LocalPosition: {x: -3.7, y: 1.03, z: -4.08}
+  m_LocalRotation: {x: 0.00012332782, y: -0.000000011326264, z: 1.3968435e-12, w: 1}
+  m_LocalPosition: {x: -3.6999998, y: 0.71246654, z: -10.219999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -502,7 +502,6 @@ GameObject:
   - component: {fileID: 411552435}
   - component: {fileID: 411552434}
   - component: {fileID: 411552436}
-  - component: {fileID: 411552437}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -561,8 +560,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411552431}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04134442, y: 0.0000000035040257, z: -1.4499588e-10, w: 0.999145}
-  m_LocalPosition: {x: -3.7, y: 1.03, z: -4.08}
+  m_LocalRotation: {x: 0.0001233278, y: -0.0000000113262635, z: 1.3968422e-12, w: 1}
+  m_LocalPosition: {x: -3.6999998, y: 0.71246654, z: -10.219999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -577,28 +576,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 411552431}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b617507da6d07e749b7efdb34e1173e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 886251e9a18ece04ea8e61686c173e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrackerSettings:
-    BindingMode: 4
-    PositionDamping: {x: 1, y: 1, z: 1}
-    AngularDampingMode: 0
-    RotationDamping: {x: 1, y: 1, z: 1}
-    QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 0.32, z: -3.86}
---- !u!114 &411552437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 411552431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f38bda98361e1de48a4ca2bd86ea3c17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  CameraDistance: 10
+  DeadZoneDepth: 0
   Composition:
     ScreenPosition: {x: 0, y: 0}
     DeadZone:
@@ -606,11 +588,11 @@ MonoBehaviour:
       Size: {x: 0.2, y: 0.2}
     HardLimits:
       Enabled: 1
-      Size: {x: 0.47, y: 0.44}
+      Size: {x: 0.71, y: 0.8}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
   TargetOffset: {x: 0, y: 0, z: 0}
-  Damping: {x: 0.5, y: 0.5}
+  Damping: {x: 1, y: 1, z: 1}
   Lookahead:
     Enabled: 0
     Time: 0
@@ -818,8 +800,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.11642311, y: 0.1, z: 0.033103358}
-  m_Center: {x: 0.0011136079, y: 0.0020405536, z: 0.016389605}
+  m_Size: {x: 0.11642313, y: 0.1, z: 0.03}
+  m_Center: {x: 0.0011136086, y: 0.0020405464, z: 0.016389605}
 --- !u!114 &840497949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,8 +878,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d231fbc09ac1dd0488ccc4fb38a4c99e, type: 3}
+  m_Resource: {fileID: 8300000, guid: d231fbc09ac1dd0488ccc4fb38a4c99e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

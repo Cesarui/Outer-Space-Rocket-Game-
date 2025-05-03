@@ -12,7 +12,6 @@ public class Movement : MonoBehaviour
 
     AudioSource audioSource;
     Rigidbody rb;
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -22,6 +21,10 @@ public class Movement : MonoBehaviour
     {
         boost.Enable();
         rotation.Enable();
+    }
+    private void OnDisable()
+    {
+        rb.freezeRotation = false;
     }
 
     private void FixedUpdate()
