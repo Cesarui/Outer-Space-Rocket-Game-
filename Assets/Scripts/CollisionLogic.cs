@@ -30,6 +30,8 @@ public class CollisionLogic : MonoBehaviour
                 break;
             default:
                 movement.enabled = false;
+                movement.GetComponent<AudioSource>().Stop();
+                movement.GetComponentInChildren<ParticleSystem>().Stop();
                 break;
         }
     }
