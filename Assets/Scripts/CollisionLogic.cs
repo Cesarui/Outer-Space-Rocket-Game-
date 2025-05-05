@@ -21,7 +21,7 @@ public class CollisionLogic : MonoBehaviour
             case "Finish":
                 Debug.Log("You reached the end!!");
                 GetComponent<Movement>().enabled = false;
-                audioSource.enabled = false;
+                audioSource.Stop();
                 movement.GetComponentInChildren<ParticleSystem>().Stop();
                 break;
             case "Start":
@@ -29,7 +29,8 @@ public class CollisionLogic : MonoBehaviour
                 break;
             default:
                 GetComponent<Movement>().enabled = false;
-                audioSource.enabled = false;
+                audioSource.Stop();
+                audioSource.PlayOneShot(crashSound);
                 movement.GetComponentInChildren<ParticleSystem>().Stop();
                 break;
         }
