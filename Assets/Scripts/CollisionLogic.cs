@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class CollisionLogic : MonoBehaviour
 {
+    bool collidable = true;
+
     [SerializeField] AudioClip crashSound;
 
     AudioSource audioSource;
@@ -16,6 +18,11 @@ public class CollisionLogic : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (!collidable)
+        {
+            return;
+        }
+
         switch (collision.gameObject.tag)
         {
             case "Finish":
@@ -28,6 +35,7 @@ public class CollisionLogic : MonoBehaviour
 
                 break;
             default:
+                collidable = false;
                 GetComponent<Movement>().enabled = false;
                 audioSource.Stop();
                 audioSource.PlayOneShot(crashSound);

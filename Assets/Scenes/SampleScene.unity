@@ -977,7 +977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56729ca2f985d24aba740425940e1d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crashSound: {fileID: 0}
+  crashSound: {fileID: 8300000, guid: 887734daaea18b74fb84f9dc5fc711f0, type: 3}
 --- !u!1 &1003048258 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eb8fb950cbf9bb14087e45d22acc5893, type: 3}
