@@ -8,7 +8,7 @@ public class CollisionLogic : MonoBehaviour
     [SerializeField] AudioClip crashSound;
     [SerializeField] AudioClip successSound;
 
-    [SerializeField]
+    [SerializeField] ParticleSystem crashEffect;
 
     AudioSource audioSource;
     Movement movement;
@@ -44,6 +44,7 @@ public class CollisionLogic : MonoBehaviour
                 GetComponent<Movement>().enabled = false;
                 audioSource.Stop();
                 audioSource.PlayOneShot(crashSound);
+                crashEffect.Play();
                 movement.GetComponentInChildren<ParticleSystem>().Stop();
                 break;
         }
