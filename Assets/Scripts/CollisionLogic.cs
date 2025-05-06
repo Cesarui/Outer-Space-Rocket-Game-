@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class CollisionLogic : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class CollisionLogic : MonoBehaviour
     [SerializeField] AudioClip successSound;
 
     [SerializeField] ParticleSystem crashEffect;
+    [SerializeField] ParticleSystem successEffect;
+
+    [SerializeField] float delayAmount;
 
     AudioSource audioSource;
     Movement movement;
@@ -34,7 +38,9 @@ public class CollisionLogic : MonoBehaviour
                 GetComponent<Movement>().enabled = false;
                 audioSource.Stop();
                 audioSource.PlayOneShot(successSound);
+                successEffect.Play();
                 movement.GetComponentInChildren<ParticleSystem>().Stop();
+                Invoke("LoadNextLevel", delayAmount);
                 break;
             case "Start":
 
@@ -46,8 +52,26 @@ public class CollisionLogic : MonoBehaviour
                 audioSource.PlayOneShot(crashSound);
                 crashEffect.Play();
                 movement.GetComponentInChildren<ParticleSystem>().Stop();
+                Invoke("ReloadLevel", delayAmount);
                 break;
         }
     }
 
+    private void ReloadLevel()
+    {
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentScene);
+    }
+
+    private void LoadNextLevel()
+    {
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        int nextLevel = currentScene + 1;
+        int numberOfLevels = SceneManager.sceneCountInBuildSettings;
+        if (nextLevel == numberOfLevels)
+        {
+            nextLevel = 0;
+        }
+        SceneManager.LoadScene(nextLevel);
+    }
 }
