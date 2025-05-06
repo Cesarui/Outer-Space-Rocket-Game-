@@ -6,6 +6,9 @@ public class CollisionLogic : MonoBehaviour
     bool collidable = true;
 
     [SerializeField] AudioClip crashSound;
+    [SerializeField] AudioClip successSound;
+
+    [SerializeField]
 
     AudioSource audioSource;
     Movement movement;
@@ -26,9 +29,11 @@ public class CollisionLogic : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Finish":
+                collidable = false;
                 Debug.Log("You reached the end!!");
                 GetComponent<Movement>().enabled = false;
                 audioSource.Stop();
+                audioSource.PlayOneShot(successSound);
                 movement.GetComponentInChildren<ParticleSystem>().Stop();
                 break;
             case "Start":
