@@ -33,28 +33,38 @@ public class CollisionLogic : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Finish":
-                collidable = false;
-                Debug.Log("You reached the end!!");
-                GetComponent<Movement>().enabled = false;
-                audioSource.Stop();
-                audioSource.PlayOneShot(successSound);
-                successEffect.Play();
-                movement.GetComponentInChildren<ParticleSystem>().Stop();
+                StartSuccess();
                 Invoke("LoadNextLevel", delayAmount);
                 break;
             case "Start":
 
                 break;
             default:
-                collidable = false;
-                GetComponent<Movement>().enabled = false;
-                audioSource.Stop();
-                audioSource.PlayOneShot(crashSound);
-                crashEffect.Play();
-                movement.GetComponentInChildren<ParticleSystem>().Stop();
+                StartCrash();
                 Invoke("ReloadLevel", delayAmount);
                 break;
         }
+    }
+
+    private void StartSuccess()
+    {
+        collidable = false;
+        Debug.Log("You reached the end!!");
+        GetComponent<Movement>().enabled = false;
+        audioSource.Stop();
+        audioSource.PlayOneShot(successSound);
+        successEffect.Play();
+        movement.GetComponentInChildren<ParticleSystem>().Stop();
+    }
+
+    private void StartCrash()
+    {
+        collidable = false;
+        GetComponent<Movement>().enabled = false;
+        audioSource.Stop();
+        audioSource.PlayOneShot(crashSound);
+        crashEffect.Play();
+        movement.GetComponentInChildren<ParticleSystem>().Stop();
     }
 
     private void ReloadLevel()

@@ -29,6 +29,39 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Thrust();
+
+        // less than 0 is when the button is not being pressed and greater means its being pressed.
+
+        float rotationValue = rotation.ReadValue<float>();
+        if (rotationValue < 0)
+        {
+            RotateLeft();
+        }
+        else if (rotationValue > 0)
+        {
+            RotateRight();
+        }
+        else
+        {
+            rb.freezeRotation = false;
+        }
+    }
+
+    private void RotateRight()
+    {
+        rb.freezeRotation = true;
+        rb.transform.Rotate(Vector3.right * rotationStrenght);
+    }
+
+    private void RotateLeft()
+    {
+        rb.freezeRotation = true;
+        rb.transform.Rotate(Vector3.left * rotationStrenght);
+    }
+
+    private void Thrust()
+    {
         if (boost.IsPressed())
         {
             rb.AddRelativeForce(Vector3.forward * boostStrenght * Time.fixedDeltaTime);
@@ -43,24 +76,5 @@ public class Movement : MonoBehaviour
             boosterParticle.Stop();
             audioSource.Stop();
         }
-
-            // less than 0 is when the button is not being pressed and greater means its being pressed.
-
-            float rotationValue = rotation.ReadValue<float>();
-        if (rotationValue < 0)
-        {
-            rb.freezeRotation = true;
-            rb.transform.Rotate(Vector3.left * rotationStrenght);
-        }
-        else if (rotationValue > 0)
-        {
-            rb.freezeRotation = true;
-            rb.transform.Rotate(Vector3.right * rotationStrenght);
-        }
-        else
-        {
-            rb.freezeRotation = false;
-        }
     }
-
 }
