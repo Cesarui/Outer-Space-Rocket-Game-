@@ -4908,6 +4908,18 @@ MonoBehaviour:
   crashEffect: {fileID: 2041675232}
   successEffect: {fileID: 150969305}
   delayAmount: 2
+--- !u!114 &840497956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254012017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5807d9f608fbf1d44bed490191ce43a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &843453451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4099351705951256580, guid: 6822ca6e2eb566e4bb7fa5a611723ff9, type: 3}
@@ -8980,6 +8992,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 06ef11b7ce383e6489240d653becde1b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 840497953}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 06ef11b7ce383e6489240d653becde1b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 840497956}
   m_SourcePrefab: {fileID: 100100000, guid: 06ef11b7ce383e6489240d653becde1b, type: 3}
 --- !u!4 &1673092398 stripped
 Transform:
